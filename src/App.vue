@@ -9,6 +9,27 @@ import {
 
 import CardLivro from './components/CardLivro.vue'
 
+function removerItemCarrinho(item){
+ const index = carrinho.value.itens.findIndex((i) => i.id===item.id )
+ carrinho.value.total-=item.total
+ carrinho.value.itens.splice(index, 1)
+}
+
+function adicionarAoCarrinho(livro) {
+  const index = carrinho.value.itens.findIndex((item) => item.id === livro.id)
+  if (index === -1) {
+    carrinho.value.itens.push({
+      ...livro,
+      quantidade: 1,
+      total: livro.price
+    })
+    carrinho.value.total += livro.price
+  } else {
+    carrinho.value.itens[index].quantidade++
+    carrinho.value.itens[index].total += livro.price
+    carrinho.value.total += livro.price
+  }
+}
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
 }
@@ -75,6 +96,25 @@ function formatarPreco(preco) {
 
 .detalhes-livro p {
   margin: 0;
+}
+
+.detalhes-livro input[type='number']{
+  width: 50px;
+  text-align: center;
+  border: none;
+  border: bottom 1px solid black ;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+.detalhes-livrobutton{
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-size: 1.5rem;
+color: black;
+padding: 0;
+margin: 0;
 }
 
 .detalhes-livro div {
