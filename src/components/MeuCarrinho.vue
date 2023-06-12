@@ -37,10 +37,10 @@ function formatarPreco(preco) {
                     </div>
          </div>
             </div>
-            <m-button/>
-        <m-button/>
-      <m-button/>
-     <m-button/>
+            <m-button texto="Limpar"/>
+        <m-button texto="Fechar carrinho"/>
+      <m-button texto="Favoritos"/>
+     <m-button texto="Continuar comprando"/>
             <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
         </div>
     </div>
