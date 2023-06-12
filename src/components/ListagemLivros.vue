@@ -8,7 +8,7 @@ import CardLivro from '@/components/CardLivro.vue'
 <div class="listagem-livros">
       <card-livro v-for="livro in livros" :key="livro.id" :livro="livro"/>
   </div>
-<template>
+</template>
 
 <style scoped>
 
