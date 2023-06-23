@@ -23,6 +23,7 @@ function formatarPreco(preco) {
     <div class="card-buttons-livros">
       <m-button @click="adicionarAoCarrinho(props.livro)" texto="adicionar carrinho"/>
     <m-button texto="Favoritar"/>
+    <button class="btn btn-primary">Mais informações</button>
     </div>
   </div>
 </template>
